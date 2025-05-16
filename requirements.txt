@@ -8,3 +8,4 @@ ag2[openai]
 gensim>=4.3
 scikit-learn         # (for PCA)
 plotly               # (for the charts)
+scipy
