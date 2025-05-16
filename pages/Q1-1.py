@@ -3,7 +3,7 @@ from models import sentence_to_vec, pca_2d, pca_3d, add_point_to_fig
 
 st.set_page_config(page_title="Q1-1 · 2D & 3D")
 
-st.title("Q1-1 : Word2Vec + PCA (2D / 3D)")
+st.title("Q1-1 · Word2Vec、PCA")
 
 # 畫原始 10 句
 fig2d = pca_2d()

@@ -70,9 +70,9 @@ def save_lang():
 
 def paging():
     st.page_link("streamlit_app.py", label="Skill Searching", icon="🏠")
-    st.page_link("pages/Q1-1.py", label="Q1-1", icon="🟦")
-    st.page_link("pages/Q2.py", label="Q2", icon="🟥")
-    st.page_link("pages/Q3.py", label="Q3", icon="🟨")
+    st.page_link("pages/Q1-1.py", label="Q1-1 2D & 3D", icon="🟦")
+    st.page_link("pages/Q2.py", label="Q2 Skip-gram", icon="🟥")
+    st.page_link("pages/Q3.py", label="Q3 CBOW", icon="🟨")
 
 def main():
     st.set_page_config(

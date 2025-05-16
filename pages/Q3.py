@@ -2,12 +2,11 @@ import streamlit as st
 from models import cbow_model, most_similar_words, sentence_similarity_rank
 
 st.set_page_config(page_title="Q3 · CBOW")
-
-st.title("Q3 : CBOW playground")
+st.title("Q3 · CBOW")
 
 user_text = st.chat_input("Enter a word or a sentence")
 if not user_text:
-    st.info("👈 在這裡輸入文字來看結果")
+    st.info("下方輸入文字來看結果")
     st.stop()
 
 if len(user_text.split()) == 1:

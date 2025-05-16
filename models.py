@@ -19,20 +19,27 @@ sentences = [
 ]
 tokenized = [s.lower().split() for s in sentences]
 
-# ---- Word2Vec：同一顆模型給三頁共用 ----
-w2v = Word2Vec(
+# Skip-gram
+skipgram_model = Word2Vec(
     tokenized,
-    vector_size=100,
-    window=3,
+    vector_size=50,
+    window=4,
     min_count=1,
-    sg=1,     # sg=1 → skip-gram；sg=0 → CBOW
+    sg=1,          # sg=1 → Skip-gram
     epochs=30,
     seed=42
 )
+w2v = skipgram_model
 
-# 如果 Q3 要 CBOW，可另存一顆 cbow_model
-cbow = Word2Vec(
-    tokenized, vector_size=100, window=3, min_count=1, sg=0, epochs=30, seed=42
+# CBOW
+cbow_model = Word2Vec(
+    tokenized,
+    vector_size=50,
+    window=4,
+    min_count=1,
+    sg=0,          # sg=0 → CBOW
+    epochs=30,
+    seed=42
 )
 
 # ---- 把句子變向量 ----

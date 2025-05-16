@@ -3,11 +3,11 @@ from models import skipgram_model, most_similar_words, sentence_similarity_rank
 
 st.set_page_config(page_title="Q2 · Skip-gram")
 
-st.title("Q2 : Skip-gram playground")
+st.title("Q2 · Skip-gram")
 
 user_text = st.chat_input("Enter a word or a sentence")
 if not user_text:
-    st.info("👈 在這裡輸入文字來看結果")
+    st.info("下方輸入文字來看結果")
     st.stop()
 
 if len(user_text.split()) == 1:
