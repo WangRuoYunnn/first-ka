@@ -1,10 +1,21 @@
 import streamlit as st
-from models import skipgram_model, most_similar_words, sentence_similarity_rank
+from models import sentences, skipgram_model, most_similar_words, sentence_similarity_rank
 
 st.set_page_config(page_title="Q2 · Skip-gram")
-
 st.title("Q2 · Skip-gram")
 
+# 頁面說明
+st.markdown("""  
+1. 輸入單字 → 看最相似單字  
+2. 輸入\四句子 → 看最像的三句原始句子  
+""")
+
+# 顯示十句原始句子
+with st.expander("點我看 10 句原始句子"):
+    for i, s in enumerate(sentences, 1):
+        st.markdown(f"**S{i}**．{s}")
+
+# user prompt
 user_text = st.chat_input("Enter a word or a sentence")
 if not user_text:
     st.info("下方輸入文字來看結果")

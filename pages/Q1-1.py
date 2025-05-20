@@ -1,9 +1,21 @@
 import streamlit as st
-from models import sentence_to_vec, pca_2d, pca_3d, add_point_to_fig
+from models import sentences, sentence_to_vec, pca_2d, pca_3d, add_point_to_fig
 
 st.set_page_config(page_title="Q1-1 · 2D & 3D")
-
 st.title("Q1-1 · Word2Vec、PCA")
+
+# 頁面說明
+st.markdown("""  
+- 先用 Skip-gram Word2Vec 將十句話變 50 維向量  
+- 再用 PCA 壓到 2D / 3D 畫散佈圖  
+- 點越靠近 → 語意越相似  
+- 輸入新句子，紅點會顯示它在語意空間的位置
+""")
+
+# 顯示十句原始句子
+with st.expander("點我看 10 句原始句子"):
+    for i, s in enumerate(sentences, 1):
+        st.markdown(f"**S{i}**．{s}")
 
 # 畫原始 10 句
 fig2d = pca_2d()
