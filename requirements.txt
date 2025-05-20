@@ -5,7 +5,7 @@ autogen-ext[openai]
 autogen[google]
 ag2[gemini]
 ag2[openai]
-gensim>=4.3
 scikit-learn         # (for PCA)
 plotly               # (for the charts)
-scipy
+scipy==1.11.4
+gensim==4.3.2
